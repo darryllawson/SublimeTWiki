@@ -1,0 +1,117 @@
+---+ Wikiword Linka
+
+Wiki word links should be highlighted as links (usually underlined and/or italic):
+
+WikiWords
+AnotherWikiWord
+
+They can also be styled:
+
+*WikiWord*
+=WikiWord=
+
+They can have a web prefix:
+
+Web.WikiWord
+WebName.WikiWord
+AnotherOne.WebName.WikiWord
+
+Web name prefixes must begin with a capital; these aren't valid:
+
+nogood.WikiPage
+
+Escape a wiki word with a ! or <nop>:
+
+!WikiWord
+<nop>WikiWord
+!WebName.WikiWord
+<nop>WebName.WikiWord.
+
+<noautolink> Note that we don't do anything for NoAutoLink, except the XML
+element highlighting. This is a known limitation. </noautolink>
+
+Punctuation character (such as  '%') pre-ceeding a WikiWord,
+escapes it. For examples these aren't auto-linked:
+
+%WikiWord
+%RED%WikiWord%ENDCOLOR%
+
+
+---+ Forced Links
+
+Forced links look like this:
+
+  [[A link to somwehere]]
+  [[wiki#syntax]]
+  [[Main.TWiki groups]]
+
+Can appear anywhere on the line: [[Link]]
+
+Can have variable references:
+
+  [[Main.%VAR%]]
+
+Can be escaped with a !:
+
+  ![[wiki syntax]]
+
+Note that <nop> can't be used to escape a forced link:
+
+  <nop>[[wiki syntax]]
+
+
+---+ Named Links
+
+Named links look like this:
+
+    [[link][label]]
+    [[#AnchorLink][label]]
+    [[http://gnu.org/][GNU]]
+
+Label can contain formatting:
+
+    [[LinkHere][formatting: *bold* =raw= ]]
+
+Label can variable references:
+
+    [[Link][a %VARIABLE%]]
+    [[Link][%WITH_PARMAS{a="1"}%]]
+
+Label can contain HTML and comments:
+
+    [[http://gnu.org/][<b>bold</b> <!-- comment -->]]
+
+The link part can also have variable references:
+
+    [[Link.%VAR%][name]]
+
+Can be escaped:
+
+    ![[#Anchor][blah]]
+
+But not with <nop>:
+
+    <nop>[[#Anchor][blah]]
+
+Having two links on the same line is allowed:
+
+    [[link][name]] [[link][name]]
+
+
+---+ External Links
+
+Mail links:
+
+    a@b.com
+    joh.bloggs@gmail.com
+    mailto:job.bloggs@gmail.com
+    [[mailto:a@b.com][Mail]]
+    [[mailto:?subject=Hi][Hi]]
+
+Other links:
+
+    http://url.com/here
+    https://url.com/here
+    ftp://url.com/here
+    news://url.com/here
+    file:////host/c/users/jbloggs

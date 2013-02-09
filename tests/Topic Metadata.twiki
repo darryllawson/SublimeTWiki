@@ -1,0 +1,13 @@
+%META:TOPICINFO{author="KennethLavrsen" date="1231081686" format="1.1" reprev="1.2" version="1.2"}%
+%META:FORM{name="ItemTemplate"}%
+%META:FIELD{name="Summary" attributes="M" title="Summary" value="Color tags stop proper rendering of link"}%
+%META:PREFERENCE{name="VIEW_TEMPLATE" title="VIEW_TEMPLATE" type="Set" value="ItemView"}%
+%META:CUSTOM{x="a" y="b"}%
+
+Meta variables must start at the start of a line, this is not valid:
+
+    %META:FORM{name="ItemTemplate"}%
+
+Nor is this:
+
+    Some text here, then: %META:FORM{name="ItemTemplate"}%

@@ -1,0 +1,32 @@
+See http://foswiki.org/System/SkinTemplates for details on what "Skin Templates" are.
+
+Basic forms:
+
+%TMPL:INCLUDE{"file"}% includes a template file..
+%TMPL:DEF{"name"}% defines a block. All text between this and the next %TMPL:END% directive is removed and saved for later use with %TMPL:P%.
+%TMPL:END% ends a block definition.
+%TMPL:PREV%: returns the previous definition of the block being defined.
+%TMPL:P{"name"}% includes a previously defined block.
+%{...}% is a comment. Whitespace either side of the comment (newlines, spaces, tabs etc) is treated as part of the comment, and removed when the comment is removed.
+
+
+They are something like this:
+
+%TMPL:DEF{"topicactions"}%some text%TMPL:END%
+
+%TMPL:DEF{"topicactions" var="default"}%some %default% text %TMPL:PREV% %TMPL:END%
+
+%TMPL:P{topicactions}%
+
+%TMPL:DEF{"topicactions" var="default"}%some %default% text %TMPL:PREV% %TMPL:END%
+
+TMPL markup can be multi-line in odd ways
+
+
+%TMPL:INCLUDE{"file"}%
+
+
+Templates comments:
+
+%{These are template comments,
+which can span multiple lines}%

@@ -1,0 +1,514 @@
+{   "name": "TWiki/Foswiki",
+
+    "comment": "Sublime Text syntax definition for the TWiki/Foswiki markup language. Use AAAPackageDev to generate a Plist file from this.",
+
+    "scopeName": "text.html.twiki",
+
+    "fileTypes": ["twiki", "foswiki"],
+
+    "uuid": "b4fd8dab-fc80-4fdb-864f-77edfd4f09ad",
+
+    "patterns": [
+        {"include": "#noautolink"},
+        {"include": "#top-no-wikiword"},
+        {"include": "#wikiword-link"}
+    ],
+
+    "repository": {
+
+        "top-no-wikiword": {
+            "comment": "Top level pattern (excluding wiki word links).",
+            "patterns": [
+                {"include": "#verbatim"},
+                {"include": "#literal"},
+                {"include": "#variable-definition"},
+                {"include": "#heading"},
+                {"include": "#inline-no-wikiword"},
+                {"include": "#bulleted-list"},
+                {"include": "#numbered-list"},
+                {"include": "#definition-list"},
+                {"include": "#anchor"},
+                {"include": "#table-row"},
+                {"include": "#separator"},
+                {"include": "#skin-template-directive"},
+                {"include": "#skin-template-directive-with-params"},
+                {"include": "#skin-template-comment"},
+                {"include": "#meta-data"}
+            ]
+        },
+
+        "inline-no-wikiword": {
+            "comment": "Inlined (not at top-level) markup (excluding wiki word links).",
+            "patterns": [
+                {"include": "#forced-link"},
+                {"include": "#labelled-link"},
+                {"include": "#inet-link"},
+                {"include": "#mail-link"},
+                {"include": "#formatted-text"},
+                {"include": "#variable-reference"},
+                {"include": "#comment"},
+                {"include": "text.html.basic"}
+            ]
+        },
+
+        "inline": {
+            "comment": "Inlined (not at top-level) markup.",
+            "patterns": [
+                {"include": "#wikiword-link"},
+                {"include": "#inline-no-wikiword"}
+            ]
+        },
+
+        "heading": {
+            "comment": "Heading: 3 or more dashes, 1-6 plus signs, heading text. '!!' excludes name from TOC, or trims it.",
+            "name": "markup.heading.twiki",
+            "contentName": "entity.name.heading.twiki",
+            "begin": "^(---+\\+{1,6})",
+            "end": "$",
+            "beginCaptures": {
+                "1": {"name": "punctuation.definition.heading.twiki"}
+            },
+            "patterns": [
+                {   "begin": "(!!)",
+                    "end": "$",
+                    "beginCaptures": {
+                        "1": {"name": "keyword.other.heading.notoc.twiki"}
+                    },
+                    "patterns": [
+                        {"include": "#inline"}
+                    ]
+                },
+                {"include": "#inline"}
+            ]
+        },
+
+        "formatted-text": {
+            "comment": "Formatted text rules: 1) cannot span multiple lines, 2) must be preceeded by start of line, space or [(!], 3) must be followed by end of line space or 'normal punctuation': [,.?!:;)].",
+            "patterns": [
+                {"include": "#bold-text"},
+                {"include": "#italic-text"},
+                {"include": "#raw-text"}
+            ]
+        },
+
+        "bold-text": {
+            "name": "markup.bold.twiki",
+            "begin": "(?x)               (?<=^|[\\s\\(!]) (\\*) (?=(\\S|\\S.*?\\S)  \\*    ($|[\\s,\\.\\?!:;\\)]))",
+            "end":   "(?x) ((?=[^\\*]*$)|(?<=                                 \\S) (\\*) (?=$|[\\s,\\.\\?!:;\\)]))",
+            "beginCaptures": {
+                "1": {"name": "punctuation.definition.bold.begin.twiki"}
+            },
+            "endCaptures": {
+                "1": {"name": "punctuation.definition.bold.end.twiki"}
+            },
+            "patterns": [
+                {   "comment": "Don't match nested bold text.",
+                    "match": "\\*"
+                },
+                {"include": "#inline"}
+            ]
+        },
+
+        "italic-text": {
+            "comment": "Matches both _..._ and __...__ (bold) forms..",
+            "name": "markup.italic.twiki",
+            "begin": "(?x)               (?<=^|[\\s\\(!]) (_{1,2}) (?=(\\S|\\S.*?\\S)  \\1    ($|[\\s,\\.\\?!:;\\)]))",
+            "end":   "(?x) ((?=[^\\1]*$)|(?<=                                    \\S) (\\1) (?=$|[\\s,\\.\\?!:;\\)]))",
+            "beginCaptures": {
+                "1": {"name": "punctuation.definition.italic.begin.twiki"}
+            },
+            "endCaptures": {
+                "1": {"name": "punctuation.definition.italic.end.twiki"}
+            },
+            "patterns": [
+                {   "comment": "Don't match nested italic text.",
+                    "match": "_"
+                },
+                {"include": "#inline"}
+            ]
+        },
+
+        "raw-text": {
+            "comment": "Matches both =...= and ==...== (bold) forms.",
+            "name": "markup.raw.twiki",
+            "begin": "(?x)               (?<=^|[\\s\\(!]) (={1,2}) (?=(\\S|\\S.*?\\S)  \\1    ($|[\\s,\\.\\?!:;\\)]))",
+            "end":   "(?x) ((?=[^\\1]*$)|(?<=                                    \\S) (\\1) (?=$|[\\s,\\.\\?!:;\\)]))",
+            "beginCaptures": {
+                "1": {"name": "punctuation.definition.raw.begin.twiki"}
+            },
+            "endCaptures": {
+                "1": {"name": "punctuation.definition.raw.end.twiki"}
+            },
+            "patterns": [
+                {   "comment": "Don't match nested raw text.",
+                    "match": "="
+                },
+                {"include": "#inline"}
+            ]
+        },
+
+        "separator": {
+            "comment": "3 or more dashes. Non-dash characters (including white space) are not permitted before or after the dashes.",
+            "name": "keyword.other.separator.twiki",
+            "match": "^---+$"
+        },
+
+        "bulleted-list": {
+            "comment": "Multiple of 3 spaces, asterisk, a space.",
+            "name": "markup.list.unnumbered.twiki",
+            "begin": "^(?:   )+(\\*) ",
+            "end": "$",
+            "beginCaptures": {
+                "1": {"name": "keyword.other.bulleted-list.twiki"}
+            },
+            "patterns": [
+                {"include": "#inline"}
+            ]
+        },
+
+        "numbered-list": {
+            "comment": "Multiple of 3 spaces, then either: any number of digits and an optional period, or a single 'A', 'a', 'I' or 'i' and a required period.",
+            "name": "markup.list.numbered.twiki",
+            "begin": "^(?:   )+(\\d+\\.?|[AaIi]\\.)",
+            "end": "$",
+            "beginCaptures": {
+                "1": {"name": "keyword.other.numbered-list.twiki"}
+            },
+            "patterns": [
+                {"include": "#inline"}
+            ]
+        },
+
+        "definition-list": {
+            "comment": "Multiple of 3 spaces, '$', arbitrary amount of text (which may be formatted), ':', at least one space. The last ': ' string on the line is matched.",
+            "name": "markup.other.definitionlist",
+            "begin": "^(?:   )+(\\$)(?=.*: )",
+            "end": "(:) ",
+            "beginCaptures": {
+                "1": {"name": "keyword.other.definition-list.begin.twiki"}
+            },
+            "endCaptures": {
+                "1": {"name": "keyword.other.definition-list.end.twiki"}
+            },
+            "patterns": [
+                {"include": "#inline"}
+            ]
+        },
+
+        "table-row": {
+            "comment": "Table row line must begin with a '|' and finish with a '|' or a backslash (line continuation). Whitespace before and after '|' is ignored.",
+            "name": "meta.tablerow.twiki",
+            "begin": "(?x)  ^\\s*(\\|)  (?=.*(\\|\\s*|\\\\)$)",
+            "end": "(\\|)\\s*$",
+            "beginCaptures": {
+                "1": {"name": "keyword.other.table-row.begin.twiki"}
+            },
+            "endCaptures": {
+                "1": {"name": "keyword.other.table-row.end.twiki"}
+            },
+            "patterns": [
+                {   "match": "(\\|)(?!\\s*$)",
+                    "captures": {
+                        "1": {"name": "keyword.other.table-row.middle.twiki"}
+                    }
+                },
+                {   "match": "(\\\\)$",
+                    "captures": {
+                        "1": {"name": "keyword.other.table-row.continuation.twiki"}
+                    }
+                },
+                {   "comment": "Row terminated without | or backslash is invalid. Weirdness: need to explicitly match newline at the end, otherwise, the newline after a line ending in gets matched by this rule; I don't understand it.",
+                    "name": "invalid.illegal.table-row.twiki",
+                    "match": "[^\\|\\\\]\\s*\n$"
+                },
+                {   "match": "(?<=\\|)\\s*(\\^)\\s*(?=\\|)",
+                    "captures": {
+                        "1": {"name": "keyword.other.table-row.cell-extend.twiki"}
+                    }
+                },
+                {"include": "#inline"}
+            ]
+        },
+
+        "links": {
+            "patterns": [
+                {"include": "#wikiword-link"},
+                {"include": "#forced-link"},
+                {"include": "#labelled-link"},
+                {"include": "#inet-link"},
+                {"include": "#mail-link"}
+            ]
+        },
+
+        "wikiword-link": {
+            "comment": "Wikiword link is formed when there is 2 or more words with initial capitals, run together. A Wiki web name must start with a capital, and followed by nothing or alphanumeric text. A <nop> and ! prefix is used to escape a Wiki word.",
+            "name": "markup.underline.link.twiki",
+            "match": "(?x)  (?<![!%]|<nop>) \\b ((?:[A-Z]\\w*\\.)+|(?<!\\.)) ((?:[A-Z][a-z0-9]+){2,}[A-Za-z0-9]*) \\b"
+        },
+
+        "forced-link": {
+            "comment": "A [[link]] link. Can be escaped with !, but not <nop>.",
+            "name": "meta.link.forced.twiki",
+            "contentName": "markup.underline.link.twiki",
+            "begin": "(?x)  (?<!!)  (\\[\\[)  (?= [^\\]\\[]* \\]\\])",
+            "end": "(\\]\\])",
+            "beginCaptures": {
+                "1": {"name": "keyword.other.link.begin.twiki"}
+            },
+            "endCaptures": {
+                "1": {"name": "keyword.other.link.end.twiki"}
+            },
+            "patterns": [
+                {"include": "#variable-reference"}
+            ]
+        },
+
+        "labelled-link": {
+            "comment": "A [[link][label]] link. Can be escaped with !, but not <nop>.",
+            "name": "meta.link.named.twiki",
+            "begin": "(?x)(?<!!)(?= \\[\\[ [^\\]\\[]* \\]\\[ [^\\]\\[]* \\]\\])",
+            "end": "(\\]\\])",
+            "endCaptures": {
+                "1": {"name": "keyword.other.link.end.twiki"}
+            },
+            "patterns": [
+                {   "begin": "(\\[\\[)",
+                    "end": "(\\]\\[)(?=.*?\\]\\])",
+                    "contentName": "markup.underline.link.twiki",
+                    "beginCaptures": {
+                        "1": {"name": "keyword.other.link.begin.twiki"}
+                    },
+                    "endCaptures": {
+                        "1": {"name": "keyword.other.link.middle.twiki"}
+                    },
+                    "patterns": [
+                        {"include": "#variable-reference"}
+                    ]
+                },
+                {"include": "#formatted-text"},
+                {"include": "#variable-reference"},
+                {"include": "#comment"},
+                {"include": "text.html.basic"}
+            ]
+        },
+
+        "inet-link": {
+            "name": "markup.underline.link.inet.twiki",
+            "match": "(?x) (?<!!) (https?|s?ftp|ftps|news|file|smb|afp|nfs|gopher|txmt):// [-:@a-zA-Z0-9_.,~%+/?=&amp;#]+"
+        },
+
+        "mail-link": {
+            "name": "markup.underline.link.mail.twiki",
+            "match": "(?x) (?<!!) (mailto:)? \\w+[-.\\w]*@[-a-z0-9]+(\\.[-a-z0-9]+)*\\.[a-z]+"
+        },
+
+        "anchor": {
+            "name": "constant.other.anchor.twiki",
+            "match": "^#(?:[A-Z][a-z0-9]+){2,}[A-Za-z0-9]*"
+        },
+
+        "verbatim": {
+            "comment": "Can not contain TWiki markup or HTML. No space permitted within <verbatim or </verbatim part of tags. Can contain variable definitions. Limitations: 1) Very rudimentary attributes matching, and 2) <verbatim> Tags must be defined on a single line.",
+            "name": "meta.verbatim.twiki",
+            "contentName": "markup.raw.twiki",
+            "begin": "(<)(verbatim)(\\s*([^>\\s]+)\\s*=\\s*([^>\\s]+)\\s*)?[^>]*(>)",
+            "end": "(</)(verbatim)\\s*(>)",
+            "beginCaptures": {
+                "1": {"name": "meta.tag.other.twiki punctuation.definition.tag.begin.twiki"},
+                "2": {"name": "meta.tag.other.twiki entity.name.tag.other.twiki"},
+                "4": {"name": "meta.tag.other.twiki entity.other.attribute-name.twiki"},
+                "5": {"name": "meta.tag.other.twiki string.quoted.double.twiki"},
+                "6": {"name": "meta.tag.other.twiki punctuation.definition.tag.end.twiki"}
+            },
+            "endCaptures": {
+                "1": {"name": "meta.tag.other.twiki punctuation.definition.tag.begin.twiki"},
+                "2": {"name": "meta.tag.other.twiki entity.name.tag.other.twiki"},
+                "3": {"name": "meta.tag.other.twiki punctuation.definition.tag.end.twiki"}
+            },
+            "patterns": [
+                {"include": "#variable-definition"},
+                {   "comment": "Nested <verbatim> tags.",
+                    "name": "markup.raw.twiki",
+                    "begin": "(<)(verbatim)([^>]*)(>)",
+                    "end": "(</)(verbatim)\\s*(>)"
+                }
+            ]
+        },
+
+        "literal": {
+            "comment": "<literal>...</literal> and <pre>...</pre>. Similar to <verbatim> except variable references and HTML is allowed.",
+            "name": "meta.literal.twiki",
+            "begin": "(?=<(pre|literal)\\b)",
+            "end": "(</)(\\1)\\s*(>)",
+            "endCaptures": {
+                "1": {"name": "meta.tag.other.twiki punctuation.definition.tag.begin.twiki"},
+                "2": {"name": "meta.tag.other.twiki entity.name.tag.other.twiki"},
+                "3": {"name": "meta.tag.other.twiki punctuation.definition.tag.end.twiki"}
+            },
+            "patterns": [
+                {"include": "#variable-definition"},
+                {"include": "text.html.basic"},
+                {   "match": ".*?",
+                    "name" : "markup.raw.twiki"
+                }
+            ]
+        },
+
+        "noautolink": {
+            "comment": "<noautolink>...</noautolink>. Like top level but WikiWords are not recognised.",
+            "name": "meta.noautolink.twiki",
+            "begin": "(?=<noautolink\\b)",
+            "end": "(</)(noautolink)\\s*(>)",
+            "endCaptures": {
+                "1": {"name": "meta.tag.other.twiki punctuation.definition.tag.begin.twiki"},
+                "2": {"name": "meta.tag.other.twiki entity.name.tag.other.twiki"},
+                "3": {"name": "meta.tag.other.twiki punctuation.definition.tag.end.twiki"}
+            },
+            "patterns": [
+                {"include": "#top-no-wikiword"}
+            ]
+        },
+
+        "variable-definition": {
+            "comment": "[multiple of 3 sp] * [sp] Set|Local [sp] NAME [sp] = [sp] value. Variable name must be all capitals, may have digits and underscores, but can't start with a digit.",
+            "name": "meta.variable-definition.twiki",
+            "begin": "^(?:   )+(\\* (?:Set|Local)) ([A-Z][A-Z0-9_]*) (=)",
+            "end": "$",
+            "captures": {
+                "1": {"name": "keyword.other.vardef.twiki"},
+                "2": {"name": "variable.other.twiki"},
+                "3": {"name": "keyword.other.vardef.twiki"}
+            },
+            "patterns": [
+                {"include": "#inline"}
+            ]
+        },
+
+        "variable-reference": {
+            "comment": "Uppercase letters only (no digits at start), no white space, '!' prefix escapes it.",
+            "patterns": [
+                {"include": "#variable-reference-no-params"},
+                {"include": "#variable-reference-with-params"}
+            ]
+        },
+
+        "variable-reference-no-params": {
+            "name": "variable.other.twiki",
+            "match": "(?<!!)(%)[A-Z][A-Z0-9_]*(%)",
+            "captures": {
+                "1": {"name": "punctuation.definition.variable-reference.begin.twiki"},
+                "3": {"name": "punctuation.definition.variable-reference.end.twiki"}
+            }
+        },
+
+        "variable-reference-with-params": {
+            "name": "meta.variable-reference.twiki variable.other.twiki",
+            "begin": "(?<!!)(%)[A-Z][A-Z0-9_]*({)",
+            "end": "(}%)",
+            "beginCaptures": {
+                "1": {"name": "punctuation.definition.variable-reference.twiki"},
+                "2": {"name": "punctuation.definition.variable-reference.twiki"}
+            },
+            "endCaptures": {
+                "1": {"name": "punctuation.definition.variable-reference.twiki"}
+            },
+            "patterns": [
+                {
+                   "comment": "Parameter name/value pair.",
+                    "begin": "(\\w+\\s*)=\\s*(\")(?=.*\")",
+                    "end": "(\")|(?=}%)",
+                    "beginCaptures": {
+                        "1": {"name": "entity.other.attribute-name.twiki"},
+                        "2": {"name": "string.quoted.double.twiki"}
+                    },
+                    "endCaptures": {
+                        "1": {"name": "string.quoted.double.twiki"}
+                    },
+                    "patterns": [
+                        {"include": "#variable-param-value"}
+                    ]
+                },
+                {   "comment": "Parameter value only; no name.",
+                    "begin": "(\"|')(?=.*\\1)",
+                    "end": "(\\1)|(?=}%)",
+                    "beginCaptures": {
+                        "1": {"name": "string.quoted.double.twiki"}
+                    },
+                    "endCaptures": {
+                        "1": {"name": "string.quoted.double.twiki"}
+                    },
+                    "patterns": [
+                        {"include": "#variable-param-value"}
+                    ]
+                },
+                {"include": "#variable-param-value"}
+            ]
+        },
+
+        "variable-param-value": {
+            "patterns": [
+                {"include": "#variable-reference"},
+                {   "name": "string.quoted.double.twiki",
+                    "match": ".*?"
+                }
+            ]
+        },
+
+        "comment": {
+            "comment": "Like a HTML comment, but may contain variable definitions.",
+            "name": "comment.block.twiki",
+            "begin": "<!--",
+            "end": "--\\s*>",
+            "captures": {
+                "0": {"name": "punctuation.definition.comment.twiki"}
+            },
+            "patterns": [
+                {"include": "#variable-definition"}
+            ]
+        },
+
+        "meta-data": {
+            "comment": "Like a variable reference, but: 1) can only appear at start of line, and 2) can't be nested.",
+            "name": "variable.other.meta-data.twiki",
+            "begin": "^%META:[A-Z][A-Z0-9_]*{",
+            "end": "}%",
+            "patterns": [
+                {   "match": "(\\w+)\\s*=\\s*(\".*?\")",
+                    "captures": {
+                        "1": {"name": "entity.other.attribute-name.twiki"},
+                        "2": {"name": "string.quoted.double.twiki"}
+                    }
+                }
+            ]
+        },
+
+        "skin-template-directive": {
+            "comment": "Skin templates are a feature of Foswiki, for more info see http://foswiki.org/220tem/SkinTemplates. Limitations: 1) Should recognise template paramters within a DEF/END section, 2) Comments should only be recognised within a DEF/END section.",
+            "name": "variable.other.skin-template.twiki",
+            "match": "%TMPL:(END|PREV)%"
+        },
+
+        "skin-template-directive-with-params": {
+            "name": "variable.other.skin-template.twiki",
+            "begin": "%TMPL:(DEF|INCLUDE|P){",
+            "end": "}%",
+            "patterns": [
+                {   "match": "(\\w+)\\s*=\\s*(\".*?\")",
+                    "captures": {
+                        "1": {"name": "entity.other.attribute-name.twiki"},
+                        "2": {"name": "string.quoted.double.twiki"}
+                    }
+                },
+                {   "name": "string.quoted.double.twiki",
+                    "match": "\".*?\""
+                }
+            ]
+        },
+
+        "skin-template-comment": {
+            "name": "comment.block.skin-template.twiki",
+            "begin": "%{",
+            "end": "}%"
+        }
+    }
+}

@@ -1,0 +1,82 @@
+Bullet list:
+
+   * alpha
+      * beta
+         * gamma
+   * alpha
+
+Can have formatting, variables and links within an item:
+
+   * *Hello* and =bye=
+   * See %SOME% variables
+   * See some WikiWords, a [[forced link]] and a normal link: [[alpha][beta]]
+
+Must have a space between the * and the text. This is not valid:
+
+   *text
+
+Numbered lists:
+
+   1. Numbered list
+      1. Numbered list
+         a. asas
+
+Can have formatting, variables and links:
+
+   1. *Hello* and =bye=
+   1. See %SOME% variables.
+   1. See some WikiWords, and [[forced link]] [[alpha][beta]]
+
+Can have a trailing dot:
+
+   1. a
+   1. b
+   1.... subsequent dots are considered text
+
+Trailing dots are NOT required:
+
+   1 a
+   1 b
+
+Don't have to use 1, any integer will work:
+
+   2 a
+   321 b
+   192012. c
+
+Don't need a space between the number and the item text:
+
+   1.one
+   23two
+
+Can use lowercase a char, must have . here:
+
+   a. a
+   a. b
+
+Can use uppercase A char, must have . here:
+
+   A. a
+   A. b
+
+Can use roman numerals (on a single i.):
+
+   i. a
+   i. b
+   i. c
+
+Or uppercase:
+
+   I. a
+   I. b
+   I. c
+
+Non-a/A characters do NOT work:
+
+   b. b
+   B. b
+
+Non-i/I characters do NOT work:
+
+   j. b
+   J. b

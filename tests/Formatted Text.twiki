@@ -1,0 +1,235 @@
+Use bold to test the basic formatted text matching:
+
+*YES*   NO*
+
+*YES, including BOTH trailing stars**
+
+*YES, including three trailing stars***
+
+**YES, including BOTH leading stars*
+
+*YES * and YES too*
+
+*YES!*
+
+*YES,*
+
+
+*!YES*
+
+*YES_*
+
+*YES)*
+
+*YES(*
+
+*(YES*
+
+*YES**
+
+Wikiwords can be within formatted text:
+
+    *bold WikiWord ...*
+
+    _italic WikiWord ..._
+
+    =raw WikiWord ...=
+
+Variables within formatted text:
+
+    *bold %VAR% ...*
+
+Links within formatted text:
+
+    *bold [[AbcDef][xxx]] ...*
+
+Formatted text inside other formatted text is not highlighted:
+
+    *bold _italic_ ...*
+
+    *bold =raw _italic_ ...= ...*
+
+    =raw *bold* ...=
+
+Inner formatting terminates parent formatting:
+
+    *bold *inner*  NO*
+
+    _italics _inner_  NO_
+
+    __italics-bold __inner__  NO__
+
+    =raw =inner=  NO=
+
+    ==raw-bold ==inner==  NO==
+
+Overlapping text formatting:
+
+    TWiki allows over-lapping formatting (not nested, overlapping).
+
+    *raw _bold-raw* ..._  NO
+
+    _italic *bold-italic_ ...*  NO
+
+    =raw *bold-raw= ...*  NO
+
+
+----------
+
+
+Verify the sub-set of characters that can appear before the starting indicator:
+
+!*YES*
+
+(*YES*
+
+(space) *YES*
+
+(tab)  *YES*
+
+
+----------
+
+
+Verify the sub-set of characters can appear after ending indicator:
+
+*YES*,
+
+*YES*.
+
+*YES*?
+
+*YES*!
+
+*YES*)
+
+*YES* (space)
+
+*YES*   (tab)
+
+
+----------
+
+
+Verify the sub-set of characters that are NOT allowed before starting indicator:
+
+.*NO*
+
+,*NO*
+
+?*NO*
+
+)*NO*
+
+
+----------
+
+
+Verify the sub-set of characters that are NOT allowed after ending indicator:
+
+*NO*~
+
+*NO*`
+
+*NO*@
+
+*NO*#
+
+*NO*$
+
+*NO*%
+
+*NO*^
+
+*NO*&
+
+*NO*(
+
+*NO*-
+
+*NO*_
+
+*NO*+
+
+*NO*|
+
+*NO*"
+
+
+----------
+
+
+Verify that space chars after starting indicator or before ending indicator
+prevent the match:
+
+*NO *
+
+*NO * (with a tab)
+
+* NO*
+
+* NO* (with a tab)
+
+*NO*=
+
+*NO*a
+
+
+----------
+
+
+Words with spaces and other chars:
+
+*YES This has spaces*
+
+*YES This has , . () punctuation*
+
+
+----------
+
+
+Italics
+
+Single _italic_ word
+
+Words _with spaces ,. ()_
+
+
+----------
+
+
+Bold Italic
+
+Single __italic__ word
+
+Words __with spaces and ,. ()__
+
+Tricky one, only single _ match: __abc __
+
+
+----------
+
+
+Fixed
+
+Single =fixed= word
+
+Words =with spaces and ,. () _=
+
+
+----------
+
+
+Bold Fixed
+
+Single ==fixed== word
+
+Words ==with spaces and ,. () _==
+
+
+----------
+
+
+Weirdness
+
+__YES alpha_, but __ NO_

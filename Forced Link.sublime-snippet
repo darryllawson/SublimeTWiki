@@ -1,0 +1,6 @@
+<snippet>
+	<description>TWiki Forced Link</description>
+    <content><![CDATA[[[${1:link}][${2:label}]]]]></content>
+    <tabTrigger>link</tabTrigger>
+    <scope>text.html.twiki</scope>
+</snippet>

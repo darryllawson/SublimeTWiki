@@ -1,0 +1,12 @@
+The following are valid separators:
+
+---
+----
+----------------------
+
+The following are NOT valid:
+
+  ---
+--
+-
+--- asasas

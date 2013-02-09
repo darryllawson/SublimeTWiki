@@ -1,0 +1,13 @@
+TWiki allows HTML to be used.
+
+<br>
+
+<a href="http://asite.com/">here</a>
+
+<pre>
+pre is treated like verbatim.
+</pre>
+
+HTML special characters are highlighted as constants:
+
+    &lt; &rt;

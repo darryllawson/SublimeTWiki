@@ -1,0 +1,14 @@
+<!--
+Comments are HTML/XML style, and therefore are handled by the
+html language spec.
+
+Variable defintions are valid within comments:
+
+   * Set VAR = Hello
+   * Local ANOTHER_VAR = %VAR%
+
+-->
+
+They can be inlined:
+
+    Preceding text <!-- Comment --> post text.

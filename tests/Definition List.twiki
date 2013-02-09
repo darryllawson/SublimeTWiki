@@ -1,0 +1,38 @@
+These are all valid definition lists:
+
+   $ term : defintion
+   $term: definition
+      $ term: definition
+         $ term: definition
+         $ term: definition
+      $ term: definition
+
+Formatted text can be used in the term or definition:
+
+   $ *bold* : and ==raw==
+
+HTML can be used in the term or definition:
+
+   $ <b>Google</b> : <a href="http://google.com/">Google</a>
+
+Variables can be used in the term or definition:
+
+   $ A %VAR% here : and a %VAR{a="1"}% here
+
+Links can be used in the term or definition:
+
+   $ [[http://google.com/][link]] : and [[http://google.com/][link]]
+
+Any level of indent can be used immediately:
+
+         $ term1: def1
+
+The first colon with a trailing space is matched:
+
+   $ foo: bar: alpha: beta
+
+No match if there is no trailing space after the colon:
+
+   $ a:b:c:d:asasasas
+
+   $ a:b:c:d:

@@ -1,0 +1,23 @@
+| *title1* | *title2* | *title3* |
+| A | B | ^ |
+
+The line must start with a | to | be a table so this is not a table |.
+
+But leading and trailing white space is fine:
+
+  | see | this | is | fine |
+
+A single | on a line does not make a table either.
+
+A backslash can be used to split a table row over two lines. This is a valid table:
+
+| A | B | C \
+| D | \
+E |
+| ^| b | c | d | e |
+
+| A | B | C | D \
+A \
+| ss |
+
+

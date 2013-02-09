@@ -1,0 +1,6 @@
+<snippet>
+	<description>TWiki Local Variable Definition</description>
+    <content><![CDATA[   * Local ${1:NAME} = ${2:value}]]></content>
+    <tabTrigger>local</tabTrigger>
+    <scope>text.html.twiki</scope>
+</snippet>

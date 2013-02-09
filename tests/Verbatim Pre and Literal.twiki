@@ -1,0 +1,61 @@
+The text within a verbatim tag ignores Wiki and HTML markup:
+
+<verbatim>
+Markup does NOT work: *bold*, _italic_
+Links do NOT work: SomeLink [[SomeLink][foo]]
+HTML tags do NOT work: <b>abc</b> <a href="..."></a>
+Variables do NOT work: %VAR%
+Can set variables:
+   * Set VERBATIM_VAR = *bold* <b>bold</b>
+</verbatim>
+
+Nested verbatim tags are interesting; they are NOT ignored:
+
+<verbatim>
+The closing verbatim tag below, does not terminate the verbatim start tag.
+<verbatim>
+</verbatim>
+This is also verbatim text.
+</verbatim>
+
+Pre and literal tags have identical behaviour, they are like verbatim
+tags except HTML markup and variables are allowed:
+
+<pre>
+Markup does NOT work: *bold*, _italic_
+Links do NOT work: SomeLink [[SomeLink][foo]]
+HTML tags do work: <b>abc</b> <a href="..."></a>
+Variables do work: %VAR%
+Can set variables:
+   * Set PRE_VAR = pre_var
+</pre>
+
+<literal>
+Markup does NOT work: *bold*, _italic_
+Links do NOT work: SomeLink [[SomeLink][foo]]
+HTML tags do work: <b>abc</b> <a href="..."></a>
+Variables do work: %VAR%
+Can set variables:
+   * Set LITERAL_VAR = literal_var
+</literal>
+
+The verbatim, pre and literal tags can have attributes:
+
+<verbatim class="bash">
+#!/bin/bash ...
+</verbatim>
+
+<pre attr="a" attr="b"> *abc* </pre>
+
+<literal attr="a" attr="b"> *abc* </literal>
+
+The verbatim tag has only very limited support for attributes,
+only one attribute is matched, and must be on the same line:
+
+<verbatim class="bash" second="notmatched">
+#!/bin/bash ...
+</verbatim>
+
+<verbatim>
+#!/bin/bash ...
+</verbatim>

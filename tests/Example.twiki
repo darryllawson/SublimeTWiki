@@ -1,0 +1,143 @@
+This is a re-creation of the examples from http://twiki.org/cgi-bin/view/TWiki/TextFormattingRules.
+
+Headings:
+
+---++ Sushi
+---+++ Maguro
+---+++!! Not in TOC
+
+Formatted Text:
+
+*Bold*
+_Italic_
+__Bold italic__
+=Fixed font=
+==Bold fixed==
+
+Separator:
+
+-------
+
+Bulleted List:
+
+   * level 1
+      * level 2
+   * back on 1
+   * A bullet
+     broken over
+     three lines
+   * last bullet
+
+
+Numbered List:
+
+   1. Sushi
+   1. Dim Sum
+   1. Fondue
+
+   A. Sushi
+   A. Dim Sum
+   A. Fondue
+
+   i. Sushi
+   i. Dim Sum
+   i. Fondue
+
+
+Definition list:
+
+   $ Sushi: Japan
+   $ Dim Sum: S.F.
+
+
+Table:
+
+| *L* | *C* | *R* |
+| A2 |  B2  |  C2 |
+| A3 |  B3  |  C3 |
+| multi span |||
+| A5-7 |  5  |  5 |
+|^| six | six |
+|^| seven | seven |
+| split\
+  | over\
+  | 3 lines |
+| A9 |  B9  |  C9 |
+
+
+WikiWord Links:
+
+WebStatistics
+Sandbox.WebNotify
+Sandbox.WebHome
+Sandbox.Subweb.TopicName
+
+
+Anchors
+
+#MyAnchor
+
+
+External Links:
+
+http://twiki.org
+https://google.com
+!http://escaped-link
+
+
+Forced Links:
+
+[[WikiWord]]
+[[WikiWord#TheSyntax]]
+[[WikiSyntax][wiki syntax]]
+[[http://gnu.org/][GNU]]
+[[Singleton]]
+escaped: ![[WikiSyntax]]
+
+
+Disable Links:
+
+<noautolink>
+RedHat and SuSE
+</noautolink>
+
+
+Mailto Links:
+
+a@b.com
+[[mailto:a@b.com][Mail]]
+[[mailto:?subject=Hi][Hi]]
+
+
+Verbatim Text:
+
+<verbatim>
+class CatAnimal {
+  void purr() {
+    <code here>
+  }
+}
+</verbatim>
+
+
+Literal Text:
+
+<literal>
+| Not | A | Table |
+</literal>
+
+
+HTML:
+
+<a href="http://google.com">Google</a>
+<!-- Comments -->
+&lt;tag&rt;
+
+
+Variables:
+
+%TOC%
+%INCLUDE{"SomeTopic"}%
+%SEARCH{"sushi"}%
+   * Set VARNAME = varvalue
+%VAR%

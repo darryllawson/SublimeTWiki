@@ -1,0 +1,53 @@
+The basic variable definition:
+
+   * Set BLAH = 1
+   * Local BLAH = 2
+
+Can have WikiWords:
+
+   * Set BETA = this is a WikiWord
+
+Can have links:
+
+   * Set BETA = [[link][name]]
+
+Can have formatted text:
+
+   * Set FOO = *bold* and _italic_ and =raw=
+
+Can reference variables:
+
+   * Set ALPHA = like this: %BLAH%
+
+Can have html:
+
+   * Set BETA = <a></a>
+
+Can appear within comments:
+
+<!--
+   * Set BETA = text =raw=
+-->
+
+The variable name must be all capitals, aplhanumeric and not start with a
+digit. These are NOT valid:
+
+   * Set lower = 100
+   * Set 2ALPHA = 100
+   * Set ALPHA:BETA = 100
+
+The format needs to be exact. The following do NOT work:
+
+  * Set BLAH = 2
+   * set BLAH = 3
+   * Set BLAH  = 4
+   * Set  BLAH = 5
+
+
+Some weirdness; HTML can be multi-line:
+
+   * Set BETA = <!-- multi-line
+comment -->
+
+   * Set BETA = <b>
+bold</b>

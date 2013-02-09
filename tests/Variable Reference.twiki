@@ -1,0 +1,74 @@
+Variable references:
+
+%TOPIC%
+%ATTACHURL%/image.gif
+/home/%USER%/
+%SEARCH{"foo" format="$topic"}%
+%INCLUDE{"SomeTopic"}%
+%INCLUDE{"TWiki05x01.SiteMap"}%
+%SEARCH{"sushi" ala="as"}%
+%ICON{"warning"}%
+
+
+The quotes are optional:
+
+%INCLUDE{SomeTopic}%
+
+
+And single quotes are useable at times:
+
+%INCLUDE{'SomeTopic'}%
+
+
+Parameterised variables:
+
+%EXAMPLE{ al="foo" PARAM1="bar" }%
+%INCLUDE{"OtherTopic" ARG="arg"}%.
+
+
+Variables can be nested:
+
+%PARENT{%CHILD%}%
+%PARENT{'%CHILD%'}%
+%PARENT{"%CHILD%"}%
+%PARENT{param="%CHILD%"}%
+%PARENT{param="%CHILD{%SUB_CHILD%}%"}%
+%SEARCH{"%INCLUDE{"OtherTopic" ARG="arg"}%"}%
+%SEARCH{"%INCLUDE{"OtherTopic" ARG="arg"}%" nonoise="on"}%
+
+
+And multi-line:
+
+%SEARCH{
+    "%INCLUDE{"OtherTopic" ARG="arg"}%"
+    nonoise="on"
+}%
+
+
+An-unterminated attribute value string, will still terminate at }%:
+
+%SEARCH{"term" format="$topic}% (This is normal text)"
+
+
+Escape a variable with a ! prefix:
+
+!%SOMEVARIABLE%
+!%FOO{a="1"}%
+
+
+White space is not permitted in the variable name:
+
+%NOT HIGHLIGHTED%
+
+
+Simple variables are not peritted to span lines:
+
+%ACROSS
+
+MULTIPLELINES%
+
+
+However, variables with parameters can span lines:
+
+%EXAMPLE{"foo"
+PARAM1="bar"}%

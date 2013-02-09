@@ -1,0 +1,32 @@
+---+ Heading 1
+
+---++ Heading 2
+
+---+++ Heading 3
+
+---++++ Heading 4
+
+---+++++ Heading 5
+
+---+++ Heading can have %VARIABLES%
+
+---+++ Heading can have [[Links]]
+
+-------+ Can have more than three dashes.
+
+ ---+++ Won't work, the line must start with a -
+a---+++ This won't either
+
+!! can be used to exlcude a heading from the table of contents like this:
+
+---+!! Heading 1
+---+   !! Heading 1
+
+Note that only the first !! is matched:
+
+---+!!!! Heading 1 %VAR%
+---+!! Heading 1 !!! and more !!!
+
+!! can also be mid heading name, to trim how the heading appears in the TOC:
+
+---+++ Heading 3 !! some other stuff !! %VAR%

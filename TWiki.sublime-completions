@@ -1,0 +1,10 @@
+{
+	"scope": "text.html.twiki",
+
+	"completions":
+	[
+		{ "trigger": "verbatim", "contents": "<verbatim>\n$1\n</verbatim>" },
+        { "trigger": "literal", "contents": "<literal>\n$1\n</literal>" },
+        { "trigger": "noautolink", "contents": "<noautolink>\n$1\n</noautolink>" }
+    ]
+}

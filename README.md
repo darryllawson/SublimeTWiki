@@ -16,9 +16,9 @@ TWiki and Foswiki have you editing wiki pages in a HTML textarea or a web based 
 
 To install this package, you have three options:
 
-1. *Not yet available, hopefully coming soon!* Use [Sublime Package Control](http://wbond.net/sublime_packages/package_control) to install the `TWiki` package. This is definitely your best option.
+1. *Not yet available, hopefully coming soon!* Use [Sublime Package Control](http://wbond.net/sublime_packages/package_control) to install the TWiki package. This is definitely your best option.
 2. Use git to clone the repository. For example, on OS X: `git clone git://github.com/darryllawson/SublimeTWiki.git ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/TWiki`
-3. Download a zip of the repository from https://github.com/darryllawson/gedit-twiki/archive/master.zip, and extract that as a directory named `TWiki` in your Sublime Text `Packages` directory.
+3. Download a zip of the repository from https://github.com/darryllawson/SublimeTWiki/archive/master.zip, and extract that as a directory named TWiki in your Sublime Text Packages directory.
 
 ## It's All Text! Firefox plugin
 

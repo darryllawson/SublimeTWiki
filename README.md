@@ -4,7 +4,7 @@
 
 ## Why is this package useful?
 
-TWiki and Foswiki have you editing wiki pages in a HTML textarea or a web based WYSIWYG editor, but to avoid frustration, and to maximise your productivity, wouldn't you rather be using your awesome Sublime Text editor?
+TWiki and Foswiki have you editing wiki pages in a HTML text area or a web based WYSIWYG editor, but to avoid frustration, and to maximise your productivity, wouldn't you rather be using your awesome Sublime Text editor?
 
 ## What exactly does this package provide?
 
@@ -16,21 +16,21 @@ TWiki and Foswiki have you editing wiki pages in a HTML textarea or a web based 
 
 To install this package, you have three options:
 
-1. *Not yet available, hopefully coming soon!* Use [Sublime Package Control](http://wbond.net/sublime_packages/package_control) to install the TWiki package. This is definitely your best option.
+1. Use [Sublime Package Control](http://wbond.net/sublime_packages/package_control) to install the *TWiki* package. This is your best option.
 2. Use git to clone the repository. For example, on OS X: `git clone git://github.com/darryllawson/SublimeTWiki.git ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/TWiki`
 3. Download a zip of the repository from https://github.com/darryllawson/SublimeTWiki/archive/master.zip, and extract that as a directory named TWiki in your Sublime Text Packages directory.
 
 ## It's All Text! Firefox plugin
 
-If you use Firefox, you can use the [It's All Text!](https://addons.mozilla.org/en-US/firefox/addon/its-all-text/) add-on to easily edit HTML textareas in Sublime Text. To configure it:
+If you use Firefox, you can use the [It's All Text!](https://addons.mozilla.org/en-US/firefox/addon/its-all-text/) add-on to easily edit HTML text areas in Sublime Text. To configure it:
 
-1. Right click in a textarea in Firefox, and select It's All Text > Preferences.
+1. Right click in a text area in Firefox, and select It's All Text > Preferences.
 2. Set the Editor field to the path of your `Sublime Text 2` executable.
 3. Add `.twiki` to the front of the File Extensions list (which is comma separated).
 
 ## QuickCursor
 
-If you are using Safari on OS X, you can use the now freely available [QuickCursor](http://www.hogbaysoftware.com/products/quickcursor) app to easily edit HTML textareas in Sublime Text. To configure it, open its Preferences and add a Custom Bundle ID of `com.sublimetext.2`. I also configure an Option-Command-E global shortcut.
+If you are using Safari on OS X, you can use the now freely available [QuickCursor](http://www.hogbaysoftware.com/products/quickcursor) app to easily edit HTML text areas in Sublime Text. To configure it, open its Preferences and add a Custom Bundle ID of `com.sublimetext.2`. I also configure an Option-Command-E global shortcut.
 
 ## Scopes names
 

@@ -31,6 +31,7 @@ Highlighting errors is generally avoided for two reasons: 1) There is not really
 ## Similar projects
 
 - [twiki.tmbundle TextMate bundle](https://github.com/textmate/twiki.tmbundle)
+- [src-highlite-foswiki](https://github.com/csirac2/src-highlite-foswiki)
 - [emacs-twiki-mode](https://github.com/christopherjwhite/emacs-twiki-mode)
 - [AsciiDoc Sublime Text package](https://github.com/SublimeText/AsciiDoc])
 

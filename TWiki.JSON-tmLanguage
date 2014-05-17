@@ -243,7 +243,7 @@
         "wikiword-link": {
             "comment": "Wikiword link is formed when there is 2 or more words with initial capitals, run together. A Wiki web name must start with a capital, and followed by nothing or alphanumeric text. A <nop> and ! prefix is used to escape a Wiki word.",
             "name": "markup.underline.link.twiki",
-            "match": "(?x)  (?<![!%]|<nop>) \\b ((?:[A-Z]\\w*\\.)+|(?<!\\.)) ((?:[A-Z][a-z0-9]+){2,}[A-Za-z0-9]*) \\b"
+            "match": "(?x)  (?<![!%]|<nop>) \\b ((?:[A-Z]\\w*\\.)+|(?<!\\.)) ((?:[A-Z][a-z]+[A-Z])[A-Za-z0-9]*) \\b"
         },
 
         "forced-link": {

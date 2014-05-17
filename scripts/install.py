@@ -8,7 +8,7 @@ from shutil import rmtree, copytree
 
 package_name = "TWiki"
 packages_path = join(environ["HOME"],
-                     "Library/Application Support/Sublime Text 2/Packages")
+                     "Library/Application Support/Sublime Text 3/Packages")
 src_path = abspath(join(dirname(__file__), pardir))
 dest_path = join(packages_path, package_name)
 

@@ -2,30 +2,38 @@
 
 Wiki word links should be highlighted as links (usually underlined and/or italic):
 
-WikiWords
-AnotherWikiWord
+    WikiWords
+    AnotherWikiWord
+    SoC - three characters are enough for a wiki word
+
+These are not wiki words:
+
+    AAaBar
+    A1Bar
+    A1aBar
+    Aa1Bar
 
 They can also be styled:
 
-*WikiWord*
-=WikiWord=
+    *WikiWord*
+    =WikiWord=
 
 They can have a web prefix:
 
-Web.WikiWord
-WebName.WikiWord
-AnotherOne.WebName.WikiWord
+    Web.WikiWord
+    WebName.WikiWord
+    AnotherOne.WebName.WikiWord
 
 Web name prefixes must begin with a capital; these aren't valid:
 
-nogood.WikiPage
+  nogood.WikiPage
 
 Escape a wiki word with a ! or <nop>:
 
-!WikiWord
-<nop>WikiWord
-!WebName.WikiWord
-<nop>WebName.WikiWord.
+  !WikiWord
+  <nop>WikiWord
+  !WebName.WikiWord
+  <nop>WebName.WikiWord.
 
 <noautolink> Note that we don't do anything for NoAutoLink, except the XML
 element highlighting. This is a known limitation. </noautolink>
@@ -33,8 +41,8 @@ element highlighting. This is a known limitation. </noautolink>
 Punctuation character (such as  '%') pre-ceeding a WikiWord,
 escapes it. For examples these aren't auto-linked:
 
-%WikiWord
-%RED%WikiWord%ENDCOLOR%
+  %WikiWord
+  %RED%WikiWord%ENDCOLOR%
 
 
 ---+ Forced Links
@@ -45,17 +53,17 @@ Forced links look like this:
   [[wiki#syntax]]
   [[Main.TWiki groups]]
 
-Can appear anywhere on the line: [[Link]]
+They can appear anywhere on the line: [[Link]]
 
-Can have variable references:
+They can have variable references:
 
   [[Main.%VAR%]]
 
-Can be escaped with a !:
+They can be escaped with a !:
 
   ![[wiki syntax]]
 
-Note that <nop> can't be used to escape a forced link:
+But <nop> can't be used to escape them:
 
   <nop>[[wiki syntax]]
 
@@ -68,16 +76,16 @@ Named links look like this:
     [[#AnchorLink][label]]
     [[http://gnu.org/][GNU]]
 
-Label can contain formatting:
+The label can contain formatting, but there need to be a space before the ]]:
 
     [[LinkHere][formatting: *bold* =raw= ]]
 
-Label can variable references:
+The label can include variable references:
 
     [[Link][a %VARIABLE%]]
     [[Link][%WITH_PARMAS{a="1"}%]]
 
-Label can contain HTML and comments:
+The label can contain HTML and comments:
 
     [[http://gnu.org/][<b>bold</b> <!-- comment -->]]
 
@@ -85,7 +93,7 @@ The link part can also have variable references:
 
     [[Link.%VAR%][name]]
 
-Can be escaped:
+A link can be escaped:
 
     ![[#Anchor][blah]]
 

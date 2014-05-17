@@ -267,7 +267,7 @@
 		<key>inet-link</key>
 		<dict>
 			<key>match</key>
-			<string>(?x) (?&lt;!!) (https?|s?ftp|ftps|news|file|smb|afp|nfs|gopher|txmt):// [-:@a-zA-Z0-9_.,~%+/?=&amp;amp;#]+</string>
+			<string>(?x) (?&lt;!!) (https?|s?ftp|ftps|news|file|smb|afp|nfs|gopher|txmt|irc|nntp|telnet):// [-:@a-zA-Z0-9_.,~%+/?=&amp;amp;#]+</string>
 			<key>name</key>
 			<string>markup.underline.link.inet.twiki</string>
 		</dict>

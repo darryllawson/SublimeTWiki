@@ -27,7 +27,7 @@ Use bold to test the basic formatted text matching:
 
 *YES**
 
-Wikiwords can be within formatted text:
+Wiki words can be within formatted text:
 
     *bold WikiWord ...*
 

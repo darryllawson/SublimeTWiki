@@ -118,8 +118,12 @@ Mail links:
 
 Other links:
 
-    http://url.com/here
-    https://url.com/here
-    ftp://url.com/here
-    news://url.com/here
     file:////host/c/users/jbloggs
+    ftp://url.com/here
+    gopher://url.com/here
+    https://url.com/here
+    http://url.com/here
+    irc://url.com/here
+    news://url.com/here
+    nntp://url.com/here
+    telnet://url.com/here

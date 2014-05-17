@@ -4,20 +4,18 @@ Out here we can have WikiWords.
 
 But inside a noautolink, we can not have
 
-WikiWords  (that should not be a link)
+    WikiWords (that should not be a link)
 
 But we can have everyting else:
 
-*formatted text*
+    *formatted text*
 
-[[Links]]
+    [[Links]]
 
-| Tables |
+    | Tables |
 
-#AnchoRs
+    #AnchoRs
 
----
-
-etc.
+    ---
 
 </noautolink>

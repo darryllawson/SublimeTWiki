@@ -4,7 +4,7 @@
 
 ## Why use this package?
 
-TWiki and Foswiki have you editing wiki pages in a HTML text area or a web based WYSIWYG editor, but to avoid frustration, and to maximise your productivity, wouldn't you rather be using your awesome Sublime Text editor?
+TWiki and Foswiki have you editing wiki pages in a HTML text area or a web based WYSIWYG editor, but to avoid frustration, and to maximize productivity, wouldn't you rather be using Sublime Text?
 
 ## What exactly does this package provide?
 
@@ -34,7 +34,7 @@ A _Monokai for Markup_ color theme is distributed with this package. It is a mod
 
 **It's All Text! Firefox Add-on**
 
-If you use Firefox, you can use the [It's All Text!](https://addons.mozilla.org/en-US/firefox/addon/its-all-text/) add-on to edit HTML text areas with Sublime Text. To configure it:
+If you use Firefox, you can use [It's All Text!](https://addons.mozilla.org/en-US/firefox/addon/its-all-text/) to edit HTML text areas with Sublime Text. To configure it:
 
 1. Right click in a text area in Firefox, and select It's All Text > Preferences.
 2. Set the Editor field to the path of your Sublime Text executable.
@@ -42,7 +42,7 @@ If you use Firefox, you can use the [It's All Text!](https://addons.mozilla.org/
 
 **QuickCursor (on OS X)**
 
-If you use Safari, Chrome or any other browser on OS X, you can use [QuickCursor](http://www.hogbaysoftware.com/products/quickcursor) to edit HTML text areas (any text actually) with Sublime Text. To configure it, open its Preferences and add a Custom Bundle ID of `com.sublimetext.3`, or `com.sublimetext.2`. I also configure an Option-Command-E global short-cut.
+If you use Safari, Chrome or any other browser on OS X, you can use [QuickCursor](https://github.com/jessegrosjean/quickcursor) to edit HTML text areas (any text actually) with Sublime Text. To configure it, open its Preferences and add a Custom Bundle ID of `com.sublimetext.3`, or `com.sublimetext.2`. I also configure an Option-Command-E global short-cut.
 
 **Text Editor Anywhere (on Windows)**
 
@@ -54,15 +54,15 @@ If you use Chrome, Internet Explorer or any other browser on Windows, you can us
 
 ## Known issues
 
-- Minor: &lt;verbatim&gt;, &lt;/verbatim&gt;, &lt;/pre&gt; and &lt;/literal&gt; tags can not span multiple lines.
-- Minor: only a single attribute in a &lt;verbatim&gt; tag is highlighted.
+- `<verbatim>`, `</verbatim>`, `<pre>`, `</pre>`, `<literal>` and `</literal>` tags that span multiple lines, are not highlighted correctly.
+- Only a single attribute in a `<verbatim>` tag is highlighted.
 
 ## Contributing
 
 This project is hosted at https://github.com/darryllawson/SublimeTWiki/.
 Please report issues at https://github.com/darryllawson/SublimeTWiki/issues/.
 
-## Acknowledgements
+## Acknowledgments
 
 Ideas and code from the [twiki.tmbundle](https://github.com/textmate/twiki.tmbundle) and [gedit-twiki](https://github.com/darryllawson/gedit-twiki) projects were used. Thanks to all involved.
 

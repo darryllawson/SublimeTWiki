@@ -1,4 +1,4 @@
-The text within a verbatim tag ignores Wiki and HTML markup:
+The text within a verbatim tag ignores wiki and HTML markup:
 
 <verbatim>
 Markup does NOT work: *bold*, _italic_

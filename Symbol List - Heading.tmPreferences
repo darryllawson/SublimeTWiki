@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>name</key>
-	<string>Symbol List: Heading</string>
-	<key>scope</key>
-	<string>markup.heading.twiki</string>
-	<key>settings</key>
-	<dict>
-		<key>showInSymbolList</key>
-		<integer>1</integer>
-		<key>symbolTransformation</key>
-		<string>
+    <key>name</key>
+    <string>Symbol List: Heading</string>
+    <key>scope</key>
+    <string>markup.heading.twiki</string>
+    <key>settings</key>
+    <dict>
+        <key>showInSymbolList</key>
+        <integer>1</integer>
+        <key>symbolTransformation</key>
+        <string>
         s/\s*\z//g;                       # strip trailing space
         s/(?&lt;=\+)\s*(!!)?\s*(?=\S)//g; # strip space and !! between last + and heading
         s/(?&lt;=\+)\+/    /g;            # change all but first + to spaces
         s/^----*\+//;                     # strip ---+ and space before title
-	    </string>
-	</dict>
-	<key>uuid</key>
-	<string>765A37C1-E770-472F-A13E-358FF0C6AD89</string>
+        </string>
+    </dict>
+    <key>uuid</key>
+    <string>765A37C1-E770-472F-A13E-358FF0C6AD89</string>
 </dict>
 </plist>
 

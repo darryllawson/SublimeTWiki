@@ -1,5 +1,5 @@
 <snippet>
-	<description>TWiki Table</description>
+    <description>TWiki Table</description>
     <content><![CDATA[| *${1:heading}* | *${2:heading}* | *${3:heading}* |
 | $4 | $5 | $6 |
 | $7 | $8 | $9 |]]></content>

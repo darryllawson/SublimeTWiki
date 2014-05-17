@@ -1,5 +1,5 @@
 <snippet>
-	<description>TWiki Definition List Item</description>
+    <description>TWiki Definition List Item</description>
     <content><![CDATA[   \$ ${1:term}: ${2:definition}]]></content>
     <tabTrigger>def</tabTrigger>
     <scope>text.html.twiki</scope>

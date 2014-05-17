@@ -26,14 +26,14 @@ They can have a web prefix:
 
 Web name prefixes must begin with a capital; these aren't valid:
 
-  nogood.WikiPage
+    nogood.WikiPage
 
 Escape a wiki word with a ! or <nop>:
 
-  !WikiWord
-  <nop>WikiWord
-  !WebName.WikiWord
-  <nop>WebName.WikiWord.
+    !WikiWord
+    <nop>WikiWord
+    !WebName.WikiWord
+    <nop>WebName.WikiWord.
 
 <noautolink> Note that we don't do anything for NoAutoLink, except the XML
 element highlighting. This is a known limitation. </noautolink>
@@ -41,31 +41,31 @@ element highlighting. This is a known limitation. </noautolink>
 Punctuation character (such as  '%') pre-ceeding a WikiWord,
 escapes it. For examples these aren't auto-linked:
 
-  %WikiWord
-  %RED%WikiWord%ENDCOLOR%
+    %WikiWord
+    %RED%WikiWord%ENDCOLOR%
 
 
 ---+ Forced Links
 
 Forced links look like this:
 
-  [[A link to somwehere]]
-  [[wiki#syntax]]
-  [[Main.TWiki groups]]
+    [[A link to somwehere]]
+    [[wiki#syntax]]
+    [[Main.TWiki groups]]
 
 They can appear anywhere on the line: [[Link]]
 
 They can have variable references:
 
-  [[Main.%VAR%]]
+    [[Main.%VAR%]]
 
 They can be escaped with a !:
 
-  ![[wiki syntax]]
+    ![[wiki syntax]]
 
 But <nop> can't be used to escape them:
 
-  <nop>[[wiki syntax]]
+    <nop>[[wiki syntax]]
 
 
 ---+ Named Links

@@ -1,5 +1,5 @@
 <snippet>
-	<description>TWiki Variable Definition</description>
+    <description>TWiki Variable Definition</description>
     <content><![CDATA[   * Set ${1:NAME} = ${2:value}]]></content>
     <tabTrigger>set</tabTrigger>
     <scope>text.html.twiki</scope>

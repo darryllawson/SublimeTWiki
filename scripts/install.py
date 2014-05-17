@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Installs the TWiki package into your local Sublime Text packages path.
+# Installs the TWiki package into your local Sublime Text 3 packages path.
 
 from os import pardir, environ
 from os.path import abspath, join, dirname, isdir

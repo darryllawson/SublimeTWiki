@@ -376,7 +376,7 @@
             "end": "$",
             "captures": {
                 "1": {"name": "keyword.other.vardef.twiki"},
-                "2": {"name": "variable.other.twiki"},
+                "2": {"name": "constant.other.twiki"},
                 "3": {"name": "keyword.other.vardef.twiki"}
             },
             "patterns": [
@@ -393,7 +393,7 @@
         },
 
         "variable-reference-no-params": {
-            "name": "variable.other.twiki",
+            "name": "constant.other.twiki",
             "match": "(?<!!)(%)[A-Z][A-Z0-9_]*(%)",
             "captures": {
                 "1": {"name": "punctuation.definition.variable-reference.begin.twiki"},
@@ -402,7 +402,7 @@
         },
 
         "variable-reference-with-params": {
-            "name": "meta.variable-reference.twiki variable.other.twiki",
+            "name": "meta.variable-reference.twiki constant.other.twiki",
             "begin": "(?<!!)(%)[A-Z][A-Z0-9_]*({)",
             "end": "(}%)",
             "beginCaptures": {
@@ -469,7 +469,7 @@
 
         "meta-data": {
             "comment": "Like a variable reference, but: 1) can only appear at start of line, and 2) can't be nested.",
-            "name": "variable.other.meta-data.twiki",
+            "name": "constant.other.meta-data.twiki",
             "begin": "^%META:[A-Z][A-Z0-9_]*{",
             "end": "}%",
             "patterns": [
@@ -484,12 +484,12 @@
 
         "skin-template-directive": {
             "comment": "Skin templates are a feature of Foswiki, for more info see http://foswiki.org/220tem/SkinTemplates. Limitations: 1) Should recognise template paramters within a DEF/END section, 2) Comments should only be recognised within a DEF/END section.",
-            "name": "variable.other.skin-template.twiki",
+            "name": "constant.other.skin-template.twiki",
             "match": "%TMPL:(END|PREV)%"
         },
 
         "skin-template-directive-with-params": {
-            "name": "variable.other.skin-template.twiki",
+            "name": "constant.other.skin-template.twiki",
             "begin": "%TMPL:(DEF|INCLUDE|P){",
             "end": "}%",
             "patterns": [

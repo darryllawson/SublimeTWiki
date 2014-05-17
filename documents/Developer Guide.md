@@ -2,9 +2,12 @@
 
 ## Design principles
 
-Wiki syntax is good; it is an efficient way to write documents for those inclined to learn it. The aim of SublimeTWiki is to assist the writing of wiki markup, not to try and synthesise a WYSIWYG editor. That is, the aim is to highlight the markup, but not simulate the rendered output of TWiki/Foswiki. For example, *bold* should not necessarily be rendered as bold text, although it may.
+Wiki syntax is good. It is an efficient way to write documents for those inclined to learn it. The aim of SublimeTWiki is to assist the writing of wiki markup, not to try and synthesize a WYSIWYG editor. That is, the aim is to highlight the markup, but not necessarily simulate the rendered output of TWiki/Foswiki. For example, *bold* should not necessarily be rendered as bold text, although it may.
 
-Highlighting errors is generally avoided for two reasons: 1) There is not really such a thing as an error in wiki markup; it is just plain text. For example, *bold, may seem like an error (that is, *bold is missing a trailing asterisk), but maybe that is what the user wants. 2) The flashing red error highlighting as you type, which is what some language definitions do, can be annoying and distracting.
+Highlighting errors is generally avoided for two reasons:
+
+1. There is not really such a thing as an error in wiki markup; it is just plain text. For example, the text *bold may seem like an error because it is missing a trailing asterisk, but that might be what the user wants.
+2. Flashing red error highlighting as you type, which is what some language definitions do, can be annoying and distracting.
 
 ## Scope naming
 
@@ -14,26 +17,24 @@ Highlighting errors is generally avoided for two reasons: 1) There is not really
 
 - The `markup.` family of scopes names is used where ever appropriate.
 
-- `keyword.other` is used for markup tokens such as `*` for lists, `|` for tables, `[[` for links, and `---+` for headings. This is because I treat markup tokens as the keywords of a markup language. However, the tokens used to delimit formatted text are *not* considered keywords, `punctuation.definition` is used there (yes, the world is grey).
+- `keyword.other` is used for markup tokens such as `*` for lists, `|` for tables, `[[` for links, and `---+` for headings. This is because I am treating markup tokens as the keywords of a markup language. However, the tokens used to delimit formatted text are *not* considered keywords, `punctuation.definition` is used there -- yes, the world is gray.
 
-- `variable.other` is used for variable names.
+- `constant.other` is used for variable names and anchors.
 
-- `constant.other` is used for anchors.
-
-- All scope names end with `.twiki` as per convention.
+- All scope names end with `.twiki`, as per convention.
 
 - The top-level scope name is `text.html.twiki`, not `text.twiki`, so that the HTML package capabilities, such as snippets and commands, apply to TWiki files.
 
 ## AAAPackageDev
 
-[AAAPackageDev](http://bitbucket.org/guillermooo/aaapackagedev) is used to convert the `TWiki.JSON-tmLangauge` file into the `TWiki.tmLanguage` file. The `TWiki.tmLanguage` file is the one actually parsed by Sublime Text.
+[AAAPackageDev](http://bitbucket.org/guillermooo/aaapackagedev) is used to convert the `TWiki.JSON-tmLangauge` file into the `TWiki.tmLanguage` file. The `TWiki.tmLanguage` file is the one actually used by Sublime Text.
 
 ## Similar projects
 
 - [twiki.tmbundle TextMate bundle](https://github.com/textmate/twiki.tmbundle)
 - [src-highlite-foswiki](https://github.com/csirac2/src-highlite-foswiki)
 - [emacs-twiki-mode](https://github.com/christopherjwhite/emacs-twiki-mode)
-- [AsciiDoc Sublime Text package](https://github.com/SublimeText/AsciiDoc])
+- [AsciiDoc Sublime Text package](https://github.com/SublimeText/AsciiDoc)
 
 ## References
 

@@ -524,7 +524,7 @@
 			<key>end</key>
 			<string>}%</string>
 			<key>name</key>
-			<string>variable.other.meta-data.twiki</string>
+			<string>constant.other.meta-data.twiki</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -673,7 +673,7 @@
 			<key>match</key>
 			<string>%TMPL:(END|PREV)%</string>
 			<key>name</key>
-			<string>variable.other.skin-template.twiki</string>
+			<string>constant.other.skin-template.twiki</string>
 		</dict>
 		<key>skin-template-directive-with-params</key>
 		<dict>
@@ -682,7 +682,7 @@
 			<key>end</key>
 			<string>}%</string>
 			<key>name</key>
-			<string>variable.other.skin-template.twiki</string>
+			<string>constant.other.skin-template.twiki</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -871,7 +871,7 @@ $</string>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.twiki</string>
+					<string>constant.other.twiki</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -943,7 +943,7 @@ $</string>
 			<key>match</key>
 			<string>(?&lt;!!)(%)[A-Z][A-Z0-9_]*(%)</string>
 			<key>name</key>
-			<string>variable.other.twiki</string>
+			<string>constant.other.twiki</string>
 		</dict>
 		<key>variable-reference-with-params</key>
 		<dict>
@@ -973,7 +973,7 @@ $</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.variable-reference.twiki variable.other.twiki</string>
+			<string>meta.variable-reference.twiki constant.other.twiki</string>
 			<key>patterns</key>
 			<array>
 				<dict>

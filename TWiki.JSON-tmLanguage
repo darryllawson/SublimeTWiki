@@ -241,9 +241,9 @@
         },
 
         "wikiword-link": {
-            "comment": "Wikiword link is formed when there is 2 or more words with initial capitals, run together. A Wiki web name must start with a capital, and followed by nothing or alphanumeric text. A <nop> and ! prefix is used to escape a Wiki word.",
+            "comment": "Wiki word link is formed when there is 2 or more words with initial capitals, run together. A wiki web name must start with a capital, and followed by nothing or alphanumeric text. It must be preceded by whitespace or (.",
             "name": "markup.underline.link.twiki",
-            "match": "(?x)  (?<![!%]|<nop>) \\b ((?:[A-Z]\\w*\\.)+|(?<!\\.)) ((?:[A-Z][a-z]+[A-Z])[A-Za-z0-9]*) \\b"
+            "match": "(?x)  (?<=^|\\s|\\() ([A-Z]\\w*\\.)* ((?:[A-Z][a-z]+[A-Z])[A-Za-z0-9]*) \\b"
         },
 
         "forced-link": {
@@ -355,7 +355,7 @@
         },
 
         "noautolink": {
-            "comment": "<noautolink>...</noautolink>. Like top level but WikiWords are not recognised.",
+            "comment": "<noautolink>...</noautolink>. Like top level but wiki words are not recognised.",
             "name": "meta.noautolink.twiki",
             "begin": "(?=<noautolink\\b)",
             "end": "(</)(noautolink)\\s*(>)",

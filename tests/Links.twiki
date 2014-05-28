@@ -1,8 +1,8 @@
----+ Wikiword Linka
+---+ Wiki Word Linka
 
 Wiki word links should be highlighted as links (usually underlined and/or italic):
 
-    WikiWords
+	WikiWords
     AnotherWikiWord
     SoC - three characters are enough for a wiki word
 
@@ -13,36 +13,46 @@ These are not wiki words:
     A1aBar
     Aa1Bar
 
-They can also be styled:
-
-    *WikiWord*
-    =WikiWord=
-
 They can have a web prefix:
 
     Web.WikiWord
     WebName.WikiWord
     AnotherOne.WebName.WikiWord
+    A.WikiWord - yep, web name can be a single character
 
 Web name prefixes must begin with a capital; these aren't valid:
 
     nogood.WikiPage
 
-Escape a wiki word with a ! or <nop>:
+Wiki words can also be formatted:
 
+    *like WikiWord*
+    =or WikiWord=
+
+But a wiki word cannot start immediately after text formatting punctuation. The following are not valid:
+
+    *WikiWord*
+    =WikiWord like this too=
+
+Actually, a wiki word must be preceded by whitespace. These aren't wiki words:
+
+    ^WikiWord
+    {WikiWord
+    [WikiWord
+    /WikiWord
+    "WikiWord
+    'WikiWord
+    .WikiWord
     !WikiWord
     <nop>WikiWord
     !WebName.WikiWord
     <nop>WebName.WikiWord.
-
-<noautolink> Note that we don't do anything for NoAutoLink, except the XML
-element highlighting. This is a known limitation. </noautolink>
-
-Punctuation character (such as  '%') pre-ceeding a WikiWord,
-escapes it. For examples these aren't auto-linked:
-
     %WikiWord
     %RED%WikiWord%ENDCOLOR%
+
+But, it can be preceded by a (:
+
+    (WikiWord
 
 
 ---+ Forced Links

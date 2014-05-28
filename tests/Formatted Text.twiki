@@ -35,6 +35,12 @@ Wiki words can be within formatted text:
 
     =raw WikiWord ...=
 
+But a wiki word cannot start immediately after text formatting punctuation. The following are not valid:
+
+    =LikeThis=
+
+    *OrLikeThis too*
+
 Variables within formatted text:
 
     *bold %VAR% ...*

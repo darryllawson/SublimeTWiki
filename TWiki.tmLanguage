@@ -551,7 +551,7 @@
 			<key>begin</key>
 			<string>(?=&lt;noautolink\b)</string>
 			<key>comment</key>
-			<string>&lt;noautolink&gt;...&lt;/noautolink&gt;. Like top level but WikiWords are not recognised.</string>
+			<string>&lt;noautolink&gt;...&lt;/noautolink&gt;. Like top level but wiki words are not recognised.</string>
 			<key>end</key>
 			<string>(&lt;/)(noautolink)\s*(&gt;)</string>
 			<key>endCaptures</key>
@@ -1128,9 +1128,9 @@ $</string>
 		<key>wikiword-link</key>
 		<dict>
 			<key>comment</key>
-			<string>Wikiword link is formed when there is 2 or more words with initial capitals, run together. A Wiki web name must start with a capital, and followed by nothing or alphanumeric text. A &lt;nop&gt; and ! prefix is used to escape a Wiki word.</string>
+			<string>Wiki word link is formed when there is 2 or more words with initial capitals, run together. A wiki web name must start with a capital, and followed by nothing or alphanumeric text. It must be preceded by whitespace or (.</string>
 			<key>match</key>
-			<string>(?x)  (?&lt;![!%]|&lt;nop&gt;) \b ((?:[A-Z]\w*\.)+|(?&lt;!\.)) ((?:[A-Z][a-z]+[A-Z])[A-Za-z0-9]*) \b</string>
+			<string>(?x)  (?&lt;=^|\s|\() ([A-Z]\w*\.)* ((?:[A-Z][a-z]+[A-Z])[A-Za-z0-9]*) \b</string>
 			<key>name</key>
 			<string>markup.underline.link.twiki</string>
 		</dict>

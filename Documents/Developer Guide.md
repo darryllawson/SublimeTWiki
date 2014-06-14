@@ -2,12 +2,12 @@
 
 ## Design principles
 
-Wiki syntax is good. It is an efficient way to write documents for those inclined to learn it. The aim of SublimeTWiki is to assist the writing of wiki markup, not to try and synthesize a WYSIWYG editor. That is, the aim is to highlight the markup, but not necessarily simulate the rendered output of TWiki/Foswiki. For example, *bold* should not necessarily be rendered as bold text, although it may.
+Wiki syntax is good. It is an efficient way to write documents for those inclined to learn it. The aim of SublimeTWiki is to assist the writing of wiki markup, not to try and synthesize a WYSIWYG editor. That is, the aim is to highlight the markup, but not necessarily simulate the rendered output of TWiki/Foswiki. For example, the editor shouldn't necessarily render the text `*bold*` as bold text, although it may.
 
-Highlighting errors is generally avoided for two reasons:
+We avoid highlighting potential errors for two reasons:
 
-1. There is not really such a thing as an error in wiki markup; it is just plain text. For example, the text *bold may seem like an error because it is missing a trailing asterisk, but that might be what the user wants.
-2. Flashing red error highlighting as you type, which is what some language definitions do, can be annoying and distracting.
+1. There is no such a thing as an error in wiki markup; it is just plain text. For example, the text `*bold` may seem like an error because it is missing a trailing asterisk, but that might be what the user wants.
+2. Flashing red error highlighting as you type (which some language definitions do), can be annoying and distracting.
 
 ## Scope naming
 
@@ -24,6 +24,10 @@ Highlighting errors is generally avoided for two reasons:
 - All scope names end with `.twiki`, as per convention.
 
 - The top-level scope name is `text.html.twiki`, not `text.twiki`, so that the HTML package capabilities, such as snippets and commands, apply to TWiki files.
+
+## Spell checking
+
+Ideally, spell checking would be disabled for raw text, however, selective control over spell checking is currently not possible in Sublime text.
 
 ## AAAPackageDev
 

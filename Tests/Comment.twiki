@@ -1,8 +1,8 @@
 <!--
 Comments are HTML/XML style, and therefore are handled by the
-html language spec.
+HTML language spec.
 
-Variable defintions are valid within comments:
+Variable definitions are valid within comments:
 
    * Set VAR = Hello
    * Local ANOTHER_VAR = %VAR%
